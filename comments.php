@@ -1,11 +1,10 @@
 <?php if ( 'comments.php' == basename( $_SERVER['SCRIPT_FILENAME'] ) ) return; ?>
-<div id="comments" class="comments-area">
     <?php if ( have_comments() ) :
         global $comments_by_type;
         $comments_by_type = &separate_comments( $comments );
 
         if ( ! empty( $comments_by_type['comment'] ) ) : ?>
-            <h3 class="comments-title"><?php comments_number(); ?></h3>
+
             <?php if ( get_comment_pages_count() > 1 ) : ?>
                 <nav id="comments-nav-above" class="comments-navigation" role="navigation">
                     <div class="paginated-comments-links"><?php paginate_comments_links(); ?></div>
@@ -28,57 +27,57 @@
     <?php endif;
         $comments_args = array(
             // Change the title of send button
-            'label_submit' => __('Submit', 'bookawesome'),
+            'label_submit' => __('Send Your Message', 'bookawesome'),
             'class_submit' => __('submit', 'bookawesome'),
             'logged_in_as' => '',
             'class_form'           => 'comment-form',
             // Change the title of the reply section
-            'title_reply' => __('Leave a Reply', 'bookawesome'),
-            'title_reply_before' => '<h3 id="reply-title" class="comment-reply-title">',
-            'title_reply_after' => '</h3>',
+            'title_reply' => __('Leave the Comment', 'bookawesome'),
+            'title_reply_before' => '<h2 class="align_center">',
+            'title_reply_after' => '</h2>',
             'fields' => apply_filters('comment_form_default_fields', array(
                 'cookies' => ''
             )),
             'submit_field'         => '<div class="form-submit">%1$s %2$s</div>',
-            'comment_field' => '
-                <div class="comment-fields">
-                    <div class="author-email">
-                        <input id="author" name="author" type="text" size="30" placeholder="name">
-                        <input id="email" name="email" type="text" size="30" placeholder="email">
-                    </div>
+            'comment_field' =>
+            '<div class="row">
+                <div class="col-6">
+                    <input type="text" placeholder="Enter Your Name">
                 </div>
-                
-                <textarea id="comment" name="comment" cols="45" rows="8" aria-required="true" placeholder="comment"></textarea>',
+                <div class="col-6">
+                    <input type="email" placeholder="Enter Your Email">
+                </div>
+            </div>
+            <textarea name="comment" cols="45" rows="5" placeholder="Comment" id="comment-message" class="form-field"></textarea>',
             );
         ?>
         <?php comment_form($comments_args);?>
-</div>
 
 <?php
 
     function format_comment($comment, $args, $depth) {
         $GLOBALS['comment'] = $comment;
         ?>
+        <div class="restbeef_comment_list">
+            <div class="restbeef_comment_item" id="comment-<?php comment_ID() ?>">
+                <div class="restbeef_comment_body">
+                    <div class="restbeef_comment_text"><?php comment_text(); ?></div>
+                    <div class="restbeef_comment_footer">
+                        <div class="restbeef_comment_meta">
+                            <div class="innertitle restbeef_comment_author">
+                                <?php echo $comment->comment_author ?>
+                            </div>
+                            <div class="restbeef_comment_date">
+                                <?php printf(__('%1$s'), get_comment_date(), get_comment_time()) ?>
+                            </div>
+                        </div>
 
-    <li <?php comment_class(); ?> id="comment-<?php comment_ID() ?>">
-        <div id="div-comment-<?php comment_ID() ?>" class="comment-body">
-            <div class="comment-author">
-                <img alt="" src="<?php echo esc_url( get_avatar_url( $comment->user_id, ['size' => '60'] ) ); ?>" srcset="<?php echo esc_url( get_avatar_url( $comment->user_id, ['size' => '60'] ) ); ?>" class="avatar avatar-60 photo" height="60" width="60">
-            </div>
-            <div class="comment-data">
-                <cite class="fn"><?php echo $comment->comment_author ?></cite><br>
-                <?php if ($comment->comment_approved == '0') : ?>
-                    <em><?php _e('Your comment is awaiting moderation.') ?></em><br />
-                <?php endif; ?>
-                <div class="comment-meta commentmetadata">
-                    <a href="<?php echo htmlspecialchars ( get_comment_link( $comment->comment_ID ) ) ?>">
-                        <?php printf(__('%1$s'), get_comment_date(), get_comment_time()) ?>
-                    </a>
-                </div>
-                <p><?php comment_text(); ?></p>
-
-                <div class="reply">
-                    <?php comment_reply_link(array_merge( $args, array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                        <div class="restbeef_comment_tools">
+                            <div class="restbeef_comment_reply">
+                                <?php comment_reply_link(array_merge( array('reply_text'    => __( 'Trả Lời' )), array('depth' => $depth, 'max_depth' => $args['max_depth']))) ?>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

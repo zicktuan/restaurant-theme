@@ -76,10 +76,10 @@ class AfterSetupTheme{
 		register_sidebar( array (
 			'name'          => __( 'Blog Sidebar', 'bookawesome' ),
 			'id'            => 'blog-sidebar-area',
-			'before_widget' => '<div id="%1$s" class="widget-container %2$s">',
+			'before_widget' => '<div id="%1$s" class="widget %2$s">',
 			'after_widget'  => "</div>",
-			'before_title'  => '<div class="widget-title"><h3>',
-			'after_title'   => '</h3></div>',
+			'before_title'  => '<h5 class="widgettitle"><span>',
+			'after_title'   => '</span></h5>',
 			) 
 		);
 	}
