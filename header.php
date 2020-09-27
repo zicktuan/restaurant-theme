@@ -23,16 +23,23 @@
         })(window,document,'script','dataLayer','GTM-5G6PPWB');
     </script>
 </head>
-
+<?php global $wp_query; ?>
 <body>
 <div class="restbeef_site_wrapper">
-
+    <?php
+        $pageId = get_the_ID();
+        $bannerPage = get_post_meta($pageId, 'awe_banner_page', true);
+    ?>
     <!-- Header -->
     <div class="restbeef_header_wrapper restbeef_js_bg_image restbeef_height100"
-         <?php if(is_home() || is_front_page()): ?>
-         data-background="<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : ''; ?>"
+         <?php if(1 == $wp_query->is_posts_page): ?>
+             data-background="<?php echo !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : ''; ?>"
+         <?php elseif(is_single()):?>
+             data-background="<?php echo !empty($optionTheme['single_blog_bg']) ? esc_url($optionTheme['single_blog_bg']) : ''; ?>"
+         <?php else:?>
+             data-background="<?php echo !empty($bannerPage) ? esc_url($bannerPage) : ''; ?>"
+         <?php endif;?>
          style="background-image: url(<?php echo !empty($optionTheme['awe_header_bg']) ? esc_url($optionTheme['awe_header_bg']) : ''; ?>);"
-         <?php endif; ?>
     >
         <header class="restbeef_main_header">
             <div class="restbeef_header_inner">
@@ -117,11 +124,3 @@
 
     </div>
 
-<!--    --><?php //if(is_home() || is_front_page()): ?>
-<!--    <div class="restbeef_main_wrapper">-->
-<!--        <div class="restbeef_container">-->
-<!--            <div class="restbeef_content_wrapper restbeef_no_sidebar">-->
-<!---->
-<!--                <div class="restbeef_content">-->
-<!--                    <div class="restbeef_tiny">-->
-<!--                        --><?php //endif;?>

@@ -87,10 +87,24 @@ class AfterSetupTheme{
             [
                 'name'          => __( 'Footer Social', 'bookawesome' ),
                 'id'            => 'awe-footer-social-area',
-                'before_widget' => '<div id="%1$s" class="las-footer-social %2$s">',
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __( 'Footer Text', 'bookawesome' ),
+                'id'            => 'awe-footer-text-area',
+                'before_widget' => '<div id="%1$s" class="widget %2$s">',
                 'after_widget'  => "</div>",
-                'before_title'  => '<h5 class="las-aside-block__title">',
-                'after_title'   => '</h5>',
+                'before_title'  => '<h2><span class="restbeef_up_title">',
+                'after_title'   => '</span></h2>',
+            ]
+        );
+
+        register_sidebar(
+            [
+                'name'          => __( 'Footer Contacts', 'bookawesome' ),
+                'id'            => 'awe-footer-address-area',
             ]
         );
 

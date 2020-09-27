@@ -1,21 +1,52 @@
 <?php get_header();?>
-
+<?php
+global $myplugin;
+$optionTheme  = $myplugin->themeSettings->getSettings();
+$showBlog = !empty($optionTheme['awe_config_show_blog']) ? $optionTheme['awe_config_show_blog'] : '0';
+?>
     <div class="restbeef_main_wrapper">
         <div class="restbeef_container">
-            <div class="restbeef_content_wrapper restbeef_right_sidebar">
-
+            <div class="restbeef_content_wrapper <?php echo (1 == $showBlog) ? 'restbeef_right_sidebar' : 'restbeef_no_sidebar' ?> ">
                 <!-- Content Inner -->
                 <div class="restbeef_content">
                     <div class="restbeef_tiny">
 
                         <?php if (have_posts()): while (have_posts()) : the_post(); ?>
 
-                            <?php $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true ); ?>
+                            <?php
+                                $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true );
+                                $getIdGallery = get_post_meta(get_the_ID(), 'awe_post_gallery', true);
+                                $galleryId = explode(',', $getIdGallery);
+                            ?>
                             <?php if ( !empty( $idVideo ) ): ?>
                                 <div class="restbeef_single_post_pf restbeef_blog_pf_video_wrapper">
-                                    <iframe width="840" height="472" src="https://www.youtube.com/embed/<?php echo $idVideo ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
+                                    <iframe width="<?php echo (1 == $showBlog) ? '840' : '100%' ?>" height="472" src="https://www.youtube.com/embed/<?php echo $idVideo ?>" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""></iframe>
                                 </div>
                             <?php endif; ?>
+
+                            <?php if(isset($getIdGallery) && !empty($getIdGallery)): ?>
+                                <?php if(0 == $showBlog):?>
+                                <div class="restbeef_single_post_pf restbeef_blog_pf_gallery" >
+                                    <div class="restbeef_grig_gallery_wrapper restbeef_grig_3columns restbeef_photoswipe_wrapper" data-uniqid="8726">
+                                        <?php foreach ($galleryId as $id): ?>
+                                            <div class="restbeef_grig_gallery_item">
+                                                <a href="<?php echo wp_get_attachment_url($id) ?>" class="restbeef_pswp_slide" data-size="740x700" data-count="0">
+                                                    <img src="<?php echo wp_get_attachment_url($id) ?>" alt="<?php the_title() ?>"/>
+                                                </a>
+                                            </div>
+                                        <?php endforeach ?>
+                                    </div>
+                                </div>
+                                <?php else: ?>
+                                    <div class="restbeef_single_post_pf restbeef_blog_pf_slider owl-carousel owl-theme">
+                                        <?php foreach ($galleryId as $id): ?>
+                                            <div class="item">
+                                                <img src="<?php echo wp_get_attachment_url($id) ?>" alt="<?php the_title() ?>"/>
+                                            </div>
+                                        <?php endforeach ?>
+                                    </div>
+                                <?php endif ?>
+                            <?php endif ?>
 
 
                             <div class="restbeef_post_content">
@@ -76,11 +107,19 @@
                                 Recent Posts
                             </h2>
                             <div class="restbeef_block_inner">
-                                <div class="restbeef_recent_posts restbeef_grig_2columns">
+                                <div class="restbeef_recent_posts <?php echo (1 == $showBlog) ? 'restbeef_grig_2columns' : 'restbeef_grig_3columns' ?>">
+
                                     <?php
-                                        $args = array(
-                                            'numberposts' => 2
-                                        );
+                                        if(1 == $showBlog) {
+                                            $args = array(
+                                                'numberposts' => 2
+                                            );
+                                        } else {
+                                            $args = array(
+                                                'numberposts' => 3
+                                            );
+                                        }
+
                                         $latestPosts = get_posts( $args );
                                     ?>
                                     <?php if (!empty($latestPosts)): ?>
@@ -118,9 +157,11 @@
                 </div>
 
                 <!-- Content Sidebar -->
+                <?php if (1 == $showBlog):?>
                 <div class="restbeef_sidebar">
                     <?php dynamic_sidebar('blog-sidebar-area'); ?>
                 </div>
+                <?php endif ?>
                 <!--end sidebar-->
 
             </div>
