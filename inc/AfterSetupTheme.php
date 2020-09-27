@@ -82,6 +82,19 @@ class AfterSetupTheme{
 			'after_title'   => '</span></h5>',
 			) 
 		);
-	}
+
+        register_sidebar(
+            [
+                'name'          => __( 'Footer Social', 'bookawesome' ),
+                'id'            => 'awe-footer-social-area',
+                'before_widget' => '<div id="%1$s" class="las-footer-social %2$s">',
+                'after_widget'  => "</div>",
+                'before_title'  => '<h5 class="las-aside-block__title">',
+                'after_title'   => '</h5>',
+            ]
+        );
+
+
+    }
 }
 new AfterSetupTheme;

@@ -10,24 +10,6 @@
 class CustomPrimaryMenuWalker extends Walker_Nav_Menu {
 
     /**
-     * @see Walker_Nav_Menu::start_lvl()
-     * @since 3.0.0
-     *
-     * @param string $output Passed by reference.
-     */
-    public function start_lvl(&$output, $depth = 0, $args = array()) {
-    }
-
-    /**
-     * @see Walker_Nav_Menu::end_lvl()
-     * @since 3.0.0
-     *
-     * @param string $output Passed by reference.
-     */
-    public function end_lvl(&$output, $depth = 0, $args = array()) {
-    }
-
-    /**
      * Start the element output.
      *
      * @param  string $output Passed by reference. Used to append additional content.
@@ -72,7 +54,7 @@ class CustomPrimaryMenuWalker extends Walker_Nav_Menu {
         $title = apply_filters( 'the_title', $item->title, $item->ID );
 
         $item_output = $args->before
-            . "<a $attributes class='menu-link'>"
+            . "<a $attributes>"
             . $args->link_before
             . $title
             . '</a> '

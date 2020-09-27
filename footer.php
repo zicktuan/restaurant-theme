@@ -1,10 +1,10 @@
-<?php if(is_home() || is_front_page()): ?>
-    </div>
-        </div>
-            </div>
-                </div>
-                    </div>
-                    <?php endif;?>
+<?php //if(is_home() || is_front_page()): ?>
+<!--    </div>-->
+<!--        </div>-->
+<!--            </div>-->
+<!--                </div>-->
+<!--                    </div>-->
+<!--                    --><?php //endif;?>
 <div class="restbeef_footer_widgets">
     <a href="https://demo-storage.com/pm/html/restbeef/#" class="restbeef_back_to_top"><i class="fa fa-chevron-up"></i></a>
     <div class="restbeef_container">

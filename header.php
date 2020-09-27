@@ -70,65 +70,17 @@
 
                     <div class="restbeef_menu_part">
                         <nav class="restbeef_nav">
-                            <ul id="menu-main-menu" class="restbeef_menu">
-                                <li class="menu-item menu-item-has-children current-menu-ancestor">
-                                    <a href="#">Home</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item current-menu-item"><a href="index.html">Home 01</a></li>
-                                        <li class="menu-item"><a href="index02.html">Home 02</a></li>
-                                        <li class="menu-item"><a href="index03.html">Home 03</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Pages</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="about_us.html">About Us</a></li>
-                                        <li class="menu-item"><a href="our_events.html">Our Events</a></li>
-                                        <li class="menu-item"><a href="our_team.html">Our Team</a></li>
-                                        <li class="menu-item"><a href="team_member.html">Team Member</a></li>
-                                        <li class="menu-item"><a href="table_reservation.html">Table Reservation</a></li>
-                                        <li class="menu-item"><a href="food_delivery.html">Food Delivery</a></li>
-                                        <li class="menu-item"><a href="typography.html">Typography</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Products</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="our_menu.html">Our Menu</a></li>
-                                        <li class="menu-item"><a href="product.html">Single Product</a></li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Stories</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="blog_grid.html">Blog Grid</a></li>
-                                        <li class="menu-item"><a href="blog_masonry.html">Blog Masonry</a></li>
-                                        <li class="menu-item"><a href="blog_simple.html">Blog Simple</a></li>
-                                        <li class="menu-item"><a href="blog_sidebar.html">Blog with Sidebar</a></li>
-                                        <li class="menu-item menu-item-has-children">
-                                            <a href="#">Blog Posts</a>
-                                            <ul class="sub-menu">
-                                                <li><a href="post_standard.html">Standard Post</a></li>
-                                                <li><a href="post_image.html">Image Post</a></li>
-                                                <li><a href="post_gallery.html">Gallery Post</a></li>
-                                                <li><a href="post_video.html">Video Post</a></li>
-                                            </ul>
-                                        </li>
-                                    </ul>
-                                </li>
-
-                                <li class="menu-item menu-item-has-children">
-                                    <a href="#">Contacts</a>
-                                    <ul class="sub-menu">
-                                        <li class="menu-item"><a href="contacts01.html">Fullwidth</a></li>
-                                        <li class="menu-item"><a href="contacts02.html">With Sidebar</a></li>
-                                    </ul>
-                                </li>
-
-                            </ul>
+                            <?php
+                            wp_nav_menu(
+                                [
+                                    'theme_location' => 'awe-header-menu',
+                                    'walker'         => new CustomPrimaryMenuWalker(),
+                                    'container' => 'ul',
+                                    'menu_class' => 'restbeef_menu',
+                                    'menu_id' => 'menu-main-menu',
+                                ]
+                            );
+                            ?>
                             <a href="table_reservation.html" class="btn_restbeef btn_book_table"><?php _e('Book a Table', 'bookawesome') ?></a>
                         </nav>
                     </div>
@@ -165,12 +117,11 @@
 
     </div>
 
-    <?php if(is_home() || is_front_page()): ?>
-    <div class="restbeef_main_wrapper">
-        <div class="restbeef_container">
-            <div class="restbeef_content_wrapper restbeef_no_sidebar">
-
-                <!-- Content Inner -->
-                <div class="restbeef_content">
-                    <div class="restbeef_tiny">
-                        <?php endif;?>
+<!--    --><?php //if(is_home() || is_front_page()): ?>
+<!--    <div class="restbeef_main_wrapper">-->
+<!--        <div class="restbeef_container">-->
+<!--            <div class="restbeef_content_wrapper restbeef_no_sidebar">-->
+<!---->
+<!--                <div class="restbeef_content">-->
+<!--                    <div class="restbeef_tiny">-->
+<!--                        --><?php //endif;?>
