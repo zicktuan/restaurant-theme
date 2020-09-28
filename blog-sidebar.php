@@ -28,7 +28,7 @@
         <div class="restbeef_simple_blog_footer">
             <div class="restbeef_simple_blog_meta">
                 <span>25 April, 2019</span>
-                <span>5 Comments</span>
+                <?php echo (get_comments_number(get_the_ID()) > 0) ? '<span>'.get_comments_number(get_the_ID()).' Comments</span>' : '' ?>
             </div>
             <div class="restbeef_simple_blog_more">
                 <a href="<?php the_permalink()?>"><?php _e('Xem Tiếp', 'bookawesome') ?></a>
@@ -36,8 +36,6 @@
         </div>
     </div>
 <?php endwhile; endif; ?>
-
-
 
 <nav class="rstbeef_blog_pagination">
     <div class="nav-links">

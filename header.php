@@ -12,6 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
+    <link href="https://fonts.googleapis.com/css?family=Great+Vibes%7COpen+Sans:400,700%7CRoboto%7CRoboto+Condensed:400,700&display=swap" rel="stylesheet">
+
 <!--    <link href="./Restbeef - Steakhouse HTML Template_files/css" rel="stylesheet">-->
     <?php wp_head() ?>
 

@@ -16,16 +16,16 @@
             $big = 999999999;
             $currentPage = max(1, get_query_var('paged'));
             if ( $totalPages > 1 ) { ?>
-                <nav class="navigation paging-navigation">
-                    <div class="pagination loop-pagination">
+                <nav class="rstbeef_blog_pagination">
+                    <div class="nav-links">
                     <?php
                         $args = array(
                             'base'      => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
                             'format'    => 'page/%#%',
                             'total'     => $totalPages,
                             'current'   => $currentPage,
-                            'prev_text' => __('<i class="prev"></i> <span>Previous</span>', "bookawesome"),
-                            'next_text' => __('<span>Next</span> <i class="next"></i>', "bookawesome"),
+                            'prev_text' => __('<i class="fa fa-chevron-left"></i>', "bookawesome"),
+                            'next_text' => __('<i class="fa fa-chevron-right"></i>', "bookawesome"),
                             'type'      => 'array',
                         );
                         $pages = paginate_links( $args );
