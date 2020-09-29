@@ -18,7 +18,7 @@ class AwesomeScripts
 
 		wp_enqueue_script('analytics', get_template_directory_uri() . '/assets/js/analytics.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('gtm', get_template_directory_uri() . '/assets/js/gtm.js', array('jquery'), $awesomeTheme->version, true);
-		wp_enqueue_script('jquery', get_template_directory_uri() . '/assets/js/jquery.min.js', array('jquery'), $awesomeTheme->version, true);
+		wp_enqueue_script('jquery-min', get_template_directory_uri() . '/assets/js/jquery.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('photoswipe', get_template_directory_uri() . '/assets/js/photoswipe.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('photoswipe-default', get_template_directory_uri() . '/assets/js/photoswipe-ui-default.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), $awesomeTheme->version, true);

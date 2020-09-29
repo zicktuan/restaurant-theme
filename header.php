@@ -91,7 +91,7 @@
                                 ]
                             );
                             ?>
-                            <a href="#" class="btn_restbeef btn_book_table"><?php _e('Book a Table', 'bookawesome') ?></a>
+                            <a href="#" class="btn_restbeef btn_book_table awe-btn-opend-popup-js"><?php _e('Book a Table', 'bookawesome') ?></a>
                         </nav>
                     </div>
 
@@ -131,7 +131,7 @@
                 <?php endif ?>
 
                 <?php if($optionTheme['awe_header_link_reservation']): ?>
-                    <a href="<?php echo $optionTheme['awe_header_link_reservation'] ?>" class="restbeef_button restbeef_button_small restbeef_button_white restbeef_button_reverse">
+                    <a href="<?php echo $optionTheme['awe_header_link_reservation'] ?>" class="restbeef_button restbeef_button_small restbeef_button_white restbeef_button_reverse awe-btn-opend-popup-js">
                         <?php echo !empty($optionTheme['awe_header_btn_reservation']) ? $optionTheme['awe_header_btn_reservation'] : ''?>
                     </a>
                 <?php endif ?>
