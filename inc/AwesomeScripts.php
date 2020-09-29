@@ -23,6 +23,7 @@ class AwesomeScripts
 		wp_enqueue_script('photoswipe-default', get_template_directory_uri() . '/assets/js/photoswipe-ui-default.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), $awesomeTheme->version, true);
+		wp_enqueue_script('reservation', get_template_directory_uri() . '/assets/js/reservation.js', array('jquery'), $awesomeTheme->version, true);
 	}
 
 	public function frontendStyles()

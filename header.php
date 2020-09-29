@@ -12,7 +12,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link href="https://fonts.googleapis.com/css?family=Great+Vibes%7COpen+Sans:400,700%7CRoboto%7CRoboto+Condensed:400,700&display=swap" rel="stylesheet">
+<!--    <link href="https://fonts.googleapis.com/css?family=Great+Vibes%7COpen+Sans:400,700%7CRoboto%7CRoboto+Condensed:400,700&display=swap" rel="stylesheet">-->
+    <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
 
 <!--    <link href="./Restbeef - Steakhouse HTML Template_files/css" rel="stylesheet">-->
     <?php wp_head() ?>
@@ -33,10 +34,10 @@
         $bannerPage = get_post_meta($pageId, 'awe_banner_page', true);
     ?>
     <!-- Header -->
-    <div class="restbeef_header_wrapper restbeef_js_bg_image restbeef_height100"
+    <div class="restbeef_header_wrapper restbeef_js_bg_image <?php echo is_front_page() ? 'restbeef_height100' : ''?>"
          <?php if(1 == $wp_query->is_posts_page): ?>
              data-background="<?php echo !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : ''; ?>"
-         <?php elseif(is_single()):?>
+         <?php elseif(is_single() || is_category()):?>
              data-background="<?php echo !empty($optionTheme['single_blog_bg']) ? esc_url($optionTheme['single_blog_bg']) : ''; ?>"
          <?php else:?>
              data-background="<?php echo !empty($bannerPage) ? esc_url($bannerPage) : ''; ?>"
@@ -90,7 +91,7 @@
                                 ]
                             );
                             ?>
-                            <a href="table_reservation.html" class="btn_restbeef btn_book_table"><?php _e('Book a Table', 'bookawesome') ?></a>
+                            <a href="#" class="btn_restbeef btn_book_table"><?php _e('Book a Table', 'bookawesome') ?></a>
                         </nav>
                     </div>
 
@@ -99,30 +100,43 @@
             </div>
         </header>
 
-<!--        --><?php //if(is_home() || is_front_page()): ?>
-<!--            <div class="restbeef_header_title restbeef_container">-->
-<!--                --><?php //if(!empty($optionTheme['awe_header_title'])): ?>
-<!--                <h1>-->
-<!--                    --><?php //echo !empty($optionTheme['awe_header_sub_title']) ? '<span class="restbeef_up_title">'.$optionTheme['awe_header_sub_title'].'</span>' : ''?>
-<!--                    --><?php //echo $optionTheme['awe_header_title'] ?>
-<!--                </h1>-->
-<!--                --><?php //endif ?>
-<!---->
-<!--                --><?php //echo !empty($optionTheme['awe_header_desc']) ? '<p class="restbeef_header_description">'.$optionTheme['awe_header_desc'].'</p>' : '' ?>
-<!---->
-<!--                --><?php //if($optionTheme['awe_header_link_menu']): ?>
-<!--                    <a href="--><?php //echo $optionTheme['awe_header_link_menu'] ?><!--" class="restbeef_button restbeef_button_small restbeef_button_white">-->
-<!--                        --><?php //echo !empty($optionTheme['awe_header_btn_menu']) ? $optionTheme['awe_header_btn_menu'] : ''?>
-<!--                    </a>-->
-<!--                --><?php //endif ?>
-<!---->
-<!--                --><?php //if($optionTheme['awe_header_link_reservation']): ?>
-<!--                    <a href="--><?php //echo $optionTheme['awe_header_link_reservation'] ?><!--" class="restbeef_button restbeef_button_small restbeef_button_white restbeef_button_reverse">-->
-<!--                        --><?php //echo !empty($optionTheme['awe_header_btn_reservation']) ? $optionTheme['awe_header_btn_reservation'] : ''?>
-<!--                    </a>-->
-<!--                --><?php //endif ?>
-<!--            </div>-->
-<!--        --><?php //endif ?>
+        <?php
+            $titlePage    = get_post_meta($pageId, 'awe_title_page', true);
+            $subTitlePage = get_post_meta($pageId, 'awe_sub_title_page', true);
+        ?>
+        <div class="restbeef_header_title restbeef_container">
+            <?php if(1 == $wp_query->is_posts_page): ?>
+                <h1>
+                    <?php echo !empty($optionTheme['blog_header_sub_title_bg']) ? '<span class="restbeef_up_title">'.$optionTheme['blog_header_sub_title_bg'].'</span>' : ''?>
+                    <?php echo !empty($optionTheme['blog_header_title_bg']) ? $optionTheme['blog_header_title_bg'] : '' ?>
+                </h1>
+            <?php elseif(is_single() || is_category()):?>
+                <h1>
+                    <?php echo !empty($optionTheme['single_blog_header_sub_title_bg']) ? '<span class="restbeef_up_title">'.$optionTheme['single_blog_header_sub_title_bg'].'</span>' : ''?>
+                    <?php echo !empty($optionTheme['single_blog_header_title_bg']) ? $optionTheme['single_blog_header_title_bg'] : '' ?>
+                </h1>
+            <?php else: ?>
+                <h1>
+                    <?php echo !empty($subTitlePage) ? '<span class="restbeef_up_title">'.$subTitlePage.'</span>' : ''?>
+                    <?php echo !empty($titlePage) ? $titlePage : '' ?>
+                </h1>
+            <?php endif ?>
+            <?php if(is_front_page()): ?>
+                <p class="restbeef_header_description"><?php echo !empty($optionTheme['awe_header_desc']) ? $optionTheme['awe_header_desc'] : '' ?></p>
+
+                <?php if($optionTheme['awe_header_link_menu']): ?>
+                    <a href="<?php echo $optionTheme['awe_header_link_menu'] ?>" class="restbeef_button restbeef_button_small restbeef_button_white">
+                        <?php echo !empty($optionTheme['awe_header_btn_menu']) ? $optionTheme['awe_header_btn_menu'] : ''?>
+                    </a>
+                <?php endif ?>
+
+                <?php if($optionTheme['awe_header_link_reservation']): ?>
+                    <a href="<?php echo $optionTheme['awe_header_link_reservation'] ?>" class="restbeef_button restbeef_button_small restbeef_button_white restbeef_button_reverse">
+                        <?php echo !empty($optionTheme['awe_header_btn_reservation']) ? $optionTheme['awe_header_btn_reservation'] : ''?>
+                    </a>
+                <?php endif ?>
+            <?php endif ?>
+        </div>
 
     </div>
 
