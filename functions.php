@@ -27,6 +27,7 @@ class AwesomeTheme {
 		// Init scripts for theme.
 		$this->AwesomeScripts();
 		$this->includeFunction();
+		$this->frontendAjaxClass();
 	}
 
 	/**
@@ -47,6 +48,11 @@ class AwesomeTheme {
     public function includeFunction(){
         require_once get_template_directory() . '/inc/Helpers/HelpersFunction.php';
         return HelpersFunction::getInstance();
+    }
+
+    public function frontendAjaxClass() {
+        require_once get_template_directory() . '/inc/Ajax/FrontendAjax.php';
+        new FrontendAjax();
     }
 }
 

@@ -37,7 +37,7 @@
     <div class="restbeef_header_wrapper restbeef_js_bg_image <?php echo is_front_page() ? 'restbeef_height100' : ''?>"
          <?php if(1 == $wp_query->is_posts_page): ?>
              data-background="<?php echo !empty($optionTheme['blog_bg']) ? esc_url($optionTheme['blog_bg']) : ''; ?>"
-         <?php elseif(is_single() || is_category()):?>
+         <?php elseif(is_single() || is_category() || is_tag()):?>
              data-background="<?php echo !empty($optionTheme['single_blog_bg']) ? esc_url($optionTheme['single_blog_bg']) : ''; ?>"
          <?php else:?>
              data-background="<?php echo !empty($bannerPage) ? esc_url($bannerPage) : ''; ?>"

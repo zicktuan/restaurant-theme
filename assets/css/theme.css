@@ -3316,6 +3316,7 @@ ul.restbeef_footer_links_list li:first-child:before {
 	margin: 100px auto;
 	position: relative;
 	border: 5px solid #fff;
+    top: 7%;
 }
 
 .awe-res-popup-reservation .close {
@@ -3340,4 +3341,8 @@ ul.restbeef_footer_links_list li:first-child:before {
 
 .awe-res-popup-reservation-content .awe-desc-wrap-css {
 	padding: 30px 0 40px 0 !important;
+}
+
+.awe-required {
+    border: 2px solid red !important;
 }

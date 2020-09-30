@@ -152,6 +152,7 @@ $showBlog = !empty($optionTheme['awe_config_show_blog']) ? $optionTheme['awe_con
                             </div>
                         </div>
 
+                        <?php get_template_part('reservation') ?>
 
                     </div>
                 </div>

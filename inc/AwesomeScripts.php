@@ -24,6 +24,12 @@ class AwesomeScripts
 		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('reservation', get_template_directory_uri() . '/assets/js/reservation.js', array('jquery'), $awesomeTheme->version, true);
+
+        wp_localize_script('photoswipe', 'awe_admin',
+            array(
+                'url' => admin_url(),
+            )
+        );
 	}
 
 	public function frontendStyles()

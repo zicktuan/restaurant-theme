@@ -11,6 +11,8 @@
                         <?php get_template_part('page', 'content');  ?>
                     <?php endwhile; endif; ?>
 
+                    <?php get_template_part('reservation') ?>
+
                 </div>
             </div>
         </div>
