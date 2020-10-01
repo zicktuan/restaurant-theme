@@ -41,10 +41,13 @@
             $dataReservation = array(
                 'post_content'          => $reservationDesc,
                 'post_title'            => $reservationName,
-                'post_type'             => 'post',
+                'post_type'             => 'awe_reservation',
+                'post_date'             => date("Y-m-d H:i:s")
             );
 
-            if($id = wp_insert_post($dataReservation)) {
+            $id = wp_insert_post($dataReservation);
+
+            if($id !== 0) {
                 update_post_meta($id, 'awe_reservation', $argsData);
                 echo 'ok';
             }
