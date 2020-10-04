@@ -35,21 +35,32 @@
                 'content' => $reservationDesc,
             );
 
-            $dataReservation = array(
-                'post_content'          => $reservationDesc,
-                'post_title'            => $reservationName,
-                'post_type'             => 'awe_reservation',
-                'post_date'             => date("Y-m-d H:i:s")
-            );
+//            $dataReservation = array(
+//                'post_content'          => $reservationDesc,
+//                'post_title'            => $reservationName,
+//                'post_type'             => 'awe_reservation',
+//                'post_date'             => date("Y-m-d H:i:s")
+//            );
+//
+//            $id = wp_insert_post($dataReservation);
+//
+//            if($id !== 0) {
+//                update_post_meta($id, 'awe_reservation_meta', $argsData);
+//                update_post_meta($id, 'awe_reservation_date', $reservationDate);
+//                update_post_meta($id, 'awe_reservation_phone', $reservationPhone);
+//                update_post_meta($id, 'awe_reservation_status', 0);
+//                echo 'ok';
+//            }
 
-            $id = wp_insert_post($dataReservation);
+            $headers = '';
+            $listMail = getListEmail();
+            $subject = __( ''.$reservationName.' đặt bàn lúc', 'bookawesome' ) .' ' . date('H: i : s, d-m-Y' );
 
-            if($id !== 0) {
-                update_post_meta($id, 'awe_reservation_meta', $argsData);
-                update_post_meta($id, 'awe_reservation_date', $reservationDate);
-                update_post_meta($id, 'awe_reservation_phone', $reservationPhone);
-                update_post_meta($id, 'awe_reservation_status', 0);
-                echo 'ok';
-            }
+            ob_start();
+            aweLoadTemplate('email/reservationMail.php');
+            $body = ob_get_clean();
+            wp_mail( join(',', $listMail), $subject, $body, $headers );
+
+            echo 3213;
         }
     }
