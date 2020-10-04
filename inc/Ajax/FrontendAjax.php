@@ -19,23 +19,20 @@
             $reservationName = $_POST['reservationName'];
             $reservationEmail = $_POST['reservationEmail'];
             $reservationPhone = $_POST['reservationPhone'];
-            $reservationTime = !empty($_POST['reservationTime']) ? $_POST['reservationTime'] : '';
+            $reservationTime = !empty($_POST['reservationTime']) ? $_POST['reservationTime'] : 0;
             $reservationHour = !empty($_POST['reservationHour']) ? $_POST['reservationHour'] : '';
             $reservationAdult = !empty($_POST['reservationAdult']) ? $_POST['reservationAdult'] : 0;
             $reservationChild = !empty($_POST['reservationChild']) ? $_POST['reservationChild'] : 0;
             $reservationDesc = !empty($_POST['reservationDesc']) ? $_POST['reservationDesc'] : '';
 
             $argsData = array(
-                'date' => $reservationDate,
                 'name' => $reservationName,
                 'mail' => $reservationEmail,
-                'phone' => $reservationPhone,
                 'time' => $reservationTime,
                 'hour' => $reservationHour,
                 'adult' => $reservationAdult,
                 'child' => $reservationChild,
                 'content' => $reservationDesc,
-                'status' => 0,
             );
 
             $dataReservation = array(
@@ -48,7 +45,10 @@
             $id = wp_insert_post($dataReservation);
 
             if($id !== 0) {
-                update_post_meta($id, 'awe_reservation', $argsData);
+                update_post_meta($id, 'awe_reservation_meta', $argsData);
+                update_post_meta($id, 'awe_reservation_date', $reservationDate);
+                update_post_meta($id, 'awe_reservation_phone', $reservationPhone);
+                update_post_meta($id, 'awe_reservation_status', 0);
                 echo 'ok';
             }
         }
