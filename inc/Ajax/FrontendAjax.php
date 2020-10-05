@@ -15,6 +15,7 @@
         }
 
         public function aweReservation() {
+            $status = false;
             $reservationDate = $_POST['reservationDate'];
             $reservationName = $_POST['reservationName'];
             $reservationEmail = $_POST['reservationEmail'];
@@ -35,32 +36,39 @@
                 'content' => $reservationDesc,
             );
 
-//            $dataReservation = array(
-//                'post_content'          => $reservationDesc,
-//                'post_title'            => $reservationName,
-//                'post_type'             => 'awe_reservation',
-//                'post_date'             => date("Y-m-d H:i:s")
-//            );
-//
-//            $id = wp_insert_post($dataReservation);
-//
-//            if($id !== 0) {
-//                update_post_meta($id, 'awe_reservation_meta', $argsData);
-//                update_post_meta($id, 'awe_reservation_date', $reservationDate);
-//                update_post_meta($id, 'awe_reservation_phone', $reservationPhone);
-//                update_post_meta($id, 'awe_reservation_status', 0);
-//                echo 'ok';
-//            }
+            $dataReservation = array(
+                'post_content'          => $reservationDesc,
+                'post_title'            => $reservationName,
+                'post_type'             => 'awe_reservation',
+                'post_date'             => date("Y-m-d H:i:s")
+            );
 
-            $headers = '';
             $listMail = getListEmail();
+            $headers = array(
+                "Content-type: text/html; charset=UTF-8'",
+                "X-UA-Compatible: IE=edge'",
+                "viewport: width=device-width, initial-scale=1",
+            );
             $subject = __( ''.$reservationName.' đặt bàn lúc', 'bookawesome' ) .' ' . date('H: i : s, d-m-Y' );
 
             ob_start();
-            aweLoadTemplate('email/reservationMail.php');
+            include aweLoadTemplate('email/reservationMail.php');
             $body = ob_get_clean();
-            wp_mail( join(',', $listMail), $subject, $body, $headers );
 
-            echo 3213;
+            $id = wp_insert_post($dataReservation);
+
+            if($id !== 0) {
+                update_post_meta($id, 'awe_reservation_meta', $argsData);
+                update_post_meta($id, 'awe_reservation_date', $reservationDate);
+                update_post_meta($id, 'awe_reservation_phone', $reservationPhone);
+                update_post_meta($id, 'awe_reservation_status', 0);
+                if (!empty($listMail)) {
+                    wp_mail( join(',', $listMail), $subject, $body, $headers );
+                }
+                $status = true;
+            }
+
+            echo wp_json_encode($status);
+            wp_die();
         }
     }
