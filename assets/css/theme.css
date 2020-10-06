@@ -3305,18 +3305,18 @@ ul.restbeef_footer_links_list li:first-child:before {
 	background: rgba(0,0,0,0.6);
 	opacity: 1;
 	transition: all 0.3s;
-	z-index: 10;
+	z-index: 1045;
 	display: none;
 }
 
 .awe-res-popup-reservation-content {
 	width: 80%;
-	height: 600px;
+	height: 72%;
 	background: #fff;
-	margin: 100px auto;
+	margin: 0% 0 0 10%;
 	position: relative;
 	border: 5px solid #fff;
-    top: 7%;
+	top: 15%;
 }
 
 .awe-res-popup-reservation .close {
@@ -3340,9 +3340,55 @@ ul.restbeef_footer_links_list li:first-child:before {
 
 
 .awe-res-popup-reservation-content .awe-desc-wrap-css {
-	padding: 30px 0 40px 0 !important;
+	padding: 3% !important;
+	width: 100%;
+}
+
+.awe-res-popup-reservation-content .restbeef_reservation_form .awe-reservation-desc {
+	height: 100%;
 }
 
 .awe-required {
     border: 2px solid red !important;
+}
+
+@media (max-width: 1024px){
+
+	.awe-form-reservation-wrap .awe-reservation-desc {
+		height: 100%;
+	}
+}
+
+@media (max-width: 768px){
+
+	.awe-res-popup-reservation-content {
+		height: 100%;
+		top: 5%;
+	}
+
+	.awe-res-popup-reservation-content {
+		width: 100%;
+		margin: 0;
+	}
+
+}
+
+@media screen and (min-height: 684px){
+	.awe-res-popup-reservation-content .restbeef_reservation_form .awe-reservation-desc {
+		height: 100%;
+	}
+}
+
+@media (min-height: 921px){
+
+	.awe-res-popup-reservation-content .restbeef_reservation_form .awe-reservation-desc {
+		height: 252px;
+	}
+}
+
+@media (max-width: 425px){
+
+	.awe-res-popup-reservation-content {
+		height: auto;
+	}
 }

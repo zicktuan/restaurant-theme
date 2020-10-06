@@ -1,4 +1,4 @@
-<div class="awe-res-popup-reservation">
+<div class="awe-res-popup-reservation scrollbar-measure">
     <div class="awe-res-popup-reservation-content">
 
         <div class="restbeef_block restbeef_js_margin restbeef_intro_block">
@@ -17,7 +17,8 @@
                     <div class="row">
                         <div class="col-4">
                             <input type="date" data-placeholder="Ngày đặt bàn" class="awe-reservation-date" name="awe-reservation-date"/>
-                        </div><!-- .col-4 -->
+                        </div>
+
                         <div class="col-4">
                             <div class="row">
                                 <div class="col-6">
@@ -36,6 +37,7 @@
                                 </div>
                             </div>
                         </div>
+
                         <div class="col-4">
                             <div class="row">
                                 <div class="col-6">
@@ -66,5 +68,7 @@
 
         <a href="#" class="close awe-close-popup"></a>
     </div>
-
+<!--    <div class="scrollbar" id="style-1">-->
+<!--        <div class="force-overflow"></div>-->
+<!--    </div>-->
 </div>

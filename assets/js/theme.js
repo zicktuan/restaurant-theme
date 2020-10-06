@@ -271,7 +271,7 @@ jQuery(document).ready(function(){
             this_val = $this.val();
 		$this.addClass('select-hidden'); 
 	
-		$this.wrap('<div class="restbeef_select_wrapper" style = "min-width: '+ thisWidth +'px"></div>');
+		$this.wrap('<div class="restbeef_select_wrapper"></div>');
 		$this.after('<div class="restbeef_select"></div>');
 
 		var $styledSelect = $this.next('div.restbeef_select');
