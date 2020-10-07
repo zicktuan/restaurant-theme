@@ -62,7 +62,10 @@ $(document).ready(function() {
                     reservationDesc,
                 },
                 success: (data) => {
-                    console.log(1)
+                    let dataResult = JSON.parse(data);
+                    if (true === dataResult) {
+                        $('.awe-res-popup-reservation').css('display', 'none')
+                    }
                 }
             })
         }

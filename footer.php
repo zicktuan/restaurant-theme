@@ -31,12 +31,18 @@
     </div>
 </div>
 
+<?php
+    global $myplugin;
+    $optionTheme  = $myplugin->themeSettings->getSettings();
+?>
+<?php if(!empty($optionTheme['awe_footer_copyright'])): ?>
 <div class="restbeef_footer restbeef_container_wide">
     <div class="restbeef_copyright">
-        © 2019 Restbeef Steakhouse. All Rights Reserved.
+        <?php echo $optionTheme['awe_footer_copyright'] ?>
     </div>
 
 </div>
+<?php endif ?>
 
 </div>
 

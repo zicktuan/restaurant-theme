@@ -47,28 +47,25 @@
                                     <input type="number" min="0" class="awe-reservation-child" name="awe-reservation-child" placeholder="Số trẻ em">
                                 </div>
                             </div>
-                        </div><!-- .col-4 -->
-                    </div><!-- .row -->
+                        </div>
+                    </div>
                     <div class="row">
                         <div class="col-4">
                             <input type="text" placeholder="Họ và tên" class="awe-reservation-name" name="awe-reservation-name"/>
-                        </div><!-- .col-4 -->
+                        </div>
                         <div class="col-4">
                             <input type="email" placeholder="Địa chỉ email" class="awe-reservation-email" name="awe-reservation-email"/>
-                        </div><!-- .col-4 -->
+                        </div>
                         <div class="col-4">
                             <input type="tel" placeholder="Số điện thoại" class="awe-reservation-phone" name="awe-reservation-phone"/>
-                        </div><!-- .col-4 -->
-                    </div><!-- .row -->
+                        </div>
+                    </div>
                     <textarea placeholder="Yêu cầu thêm" class="awe-reservation-desc" name="awe-reservation-desc"></textarea>
-                    <input type="submit" class="awn-btn-submit-form-reservation" value="Đặt Bàn"/>
+                    <input type="submit" class="awn-btn-submit-form-reservation" style="background: #ec7b03;;" value="Đặt Bàn"/>
                 </form>
             </div>
         </div>
 
         <a href="#" class="close awe-close-popup"></a>
     </div>
-<!--    <div class="scrollbar" id="style-1">-->
-<!--        <div class="force-overflow"></div>-->
-<!--    </div>-->
 </div>

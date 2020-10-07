@@ -330,7 +330,7 @@ input[type="submit"] {
 	line-height: 20px;
 	font-weight: 700;
 	font-family: 'Roboto Condensed', sans-serif;
-	background: #b71c1c;
+	background: #ec7b03;
 	height: 50px;
 	border: none;
 	text-transform: uppercase;
@@ -352,7 +352,7 @@ a.restbeef_button.restbeef_button_white:visited,
 a.restbeef_button.restbeef_button_white:focus,
 a.restbeef_button.restbeef_button_white {
 	background: #ffffff;
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 a.restbeef_button:hover,
@@ -378,7 +378,7 @@ a.restbeef_button.restbeef_button_white.restbeef_button_reverse,
 input[type="button"].restbeef_button_white.restbeef_button_reverse,
 input[type="reset"].restbeef_button_white.restbeef_button_reverse,
 input[type="submit"].restbeef_button_white.restbeef_button_reverse {
-	background: #b71c1c;
+	background: #ec7b03;
 	color: #ffffff;
 }
 a.restbeef_button.restbeef_button_white:hover,
@@ -386,7 +386,7 @@ a.restbeef_button.restbeef_button_reverse:hover,
 input[type="button"].restbeef_button_reverse:hover,
 input[type="reset"].restbeef_button_reverse:hover,
 input[type="submit"].restbeef_button_reverse:hover {
-	background: #b71c1c;
+	background: #ec7b03;
 	color: #ffffff;
 }
 a.restbeef_button.restbeef_button_white.restbeef_button_reverse:hover,
@@ -394,7 +394,7 @@ input[type="button"].restbeef_button_white.restbeef_button_reverse:hover,
 input[type="reset"].restbeef_button_white.restbeef_button_reverse:hover,
 input[type="submit"].restbeef_button_white.restbeef_button_reverse:hover {
 	background: #ffffff;
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 form input[type="button"],
@@ -644,7 +644,7 @@ body .restbeef_footer_widgets textarea::-ms-input-placeholder {
 a,
 a:hover {
 	text-decoration: none;
-	color: #b71c1c;
+	color: #ec7b03;
 }
 a {
 	transition: color 300ms;
@@ -683,7 +683,7 @@ h6 span.restbeef_up_title {
 	font-family: 'Sedgwick Ave', cursive;
 	font-weight: 400;
 	margin: 0 auto 0 auto;
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 h1,
@@ -782,7 +782,7 @@ h3 a:hover,
 h4 a:hover,
 h5 a:hover,
 h6 a:hover {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 /* Blockquotes */
@@ -1108,7 +1108,7 @@ blockquote {
 	color: #ffffff;
 }
 .restbeef_header_tagline .restbeef_header_socials a:hover {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 /* Header Logo */
@@ -1150,8 +1150,8 @@ a.btn_book_table {
 	transition: background 300ms, color 300ms, border 300ms;
 }
 a.btn_book_table:hover {
-	color: #b71c1c;
-	border-color: #b71c1c;
+	color: #ec7b03;
+	border-color: #ec7b03;
 }
 .restbeef_nav .restbeef_menu {
 	padding: 0;
@@ -1169,7 +1169,7 @@ a.btn_book_table:hover {
 }
 .restbeef_nav .restbeef_menu > li > a {
 	padding: 27px 16px 27px 16px;
-	color: #ffffff;
+	color: #ec7b03;
 	font-size: 14px;
 	line-height: 20px;
 	letter-spacing: -0.2px;
@@ -1179,7 +1179,7 @@ a.btn_book_table:hover {
 .restbeef_nav .restbeef_menu > li:hover > a,
 .restbeef_nav .restbeef_menu > li.current-menu-item > a,
 .restbeef_nav .restbeef_menu > li.current-menu-ancestor > a {
-	color: #b71c1c;
+	color: #ffffff;
 }
 
 .restbeef_nav .restbeef_menu .sub-menu {
@@ -1416,7 +1416,7 @@ body .restbeef_two_sided_block textarea {
 	font-size: 72px;
 	line-height: 72px;
 	display: block;
-	color: #b71c1c;
+	color: #ec7b03;
 	margin: 0 0 26px 0;
 }
 .restbeef_iconbox h4 {
@@ -1796,7 +1796,7 @@ ul.restbeef_contact_socials li {
 	content: '\f005\f005\f005\f005\f005';
 }
 .restbeef_testimonial_content {
-	background: #b71c1c;
+	background: #ec7b03;
 	padding: 24px 30px 23px 30px;
 	color: #ffffff;
 	margin: 20px 0 0 0;
@@ -2201,7 +2201,7 @@ a.restbeef_testimonials_flow_next:hover {
 	font-size: 30px;
 	line-height: 40px;
 	font-weight: 700;
-	background: #b71c1c;
+	background: #ec7b03;
 	color: #ffffff;
 }
 .restbeef_recent_product_content h4 {
@@ -2481,7 +2481,7 @@ a.restbeef_testimonials_flow_next:hover {
 	margin: 0 0 20px 0;
 }
 .restbeef_simple_blog_footer {
-	background: #b71c1c;
+	background: #ec7b03;
 	display: flex;
 	justify-content: space-between;
 }
@@ -2535,7 +2535,7 @@ a.restbeef_testimonials_flow_next:hover {
 }
 .restbeef_simple_blog_more a:hover {
 	background: #ffffff;
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 .restbeef_simple_blog_pf {
@@ -2613,12 +2613,12 @@ a.restbeef_testimonials_flow_next:hover {
 	margin: 0 5px;
 }
 .rstbeef_blog_pagination a:hover {
-	background: rgba(183,28,28,1);
-	border-color: #b71c1c;
+	background: #ec7b03;
+	border-color: #ec7b03;
 	color: #ffffff;
 }
 .rstbeef_blog_pagination span.current {
-	border-color: #b71c1c;
+	border-color: #ec7b03;
 }
 .rstbeef_blog_pagination span.dots {
 	border: none;
@@ -2686,7 +2686,7 @@ a.restbeef_testimonials_flow_next:hover {
 	color: #555353;
 }
 .restbeef_post_tags a:hover {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 /* Post Navigation */
@@ -2710,7 +2710,7 @@ a.restbeef_testimonials_flow_next:hover {
 	margin-left: 19px;
 }
 .restbeef_post_navigation a:hover {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 
 /* Post Comments */
@@ -2736,7 +2736,7 @@ a.restbeef_testimonials_flow_next:hover {
 }
 .restbeef_comment_footer {
 	display: flex;
-	background: #b71c1c;
+	background: #ec7b03;
 	justify-content: space-between;
 	padding: 16px 30px 14px 30px;
 	color: #ffffff;
@@ -2757,6 +2757,7 @@ a.restbeef_testimonials_flow_next:hover {
 }
 .restbeef_comment_footer a:hover {
 	opacity: 0.7;
+    color: black;
 }
 .restbeef_comment_tools div,
 .restbeef_comment_meta div {
@@ -2827,7 +2828,7 @@ a.restbeef_testimonials_flow_next:hover {
 	display: inline-block;
 	margin: 0 auto;
 	color: #ffffff;
-	background: #b71c1c;
+	background: #ec7b03;
 	text-transform: uppercase;
 	font-family: 'Roboto Condensed', sans-serif;
 	font-weight: 700;
@@ -2900,7 +2901,7 @@ a.restbeef_testimonials_flow_next:hover {
 	margin: 0;
 }
 .restbeef_menu_item .restbeef_menu_price {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 .restbeef_menu_item .restbeef_menu_price del {
 	color: #555353;
@@ -2994,7 +2995,7 @@ a.restbeef_featured_post_widget_title {
 	margin: 0 0 2px 0;
 }
 a.restbeef_featured_post_widget_title:hover {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 .restbeef_widget_meta {
 	font-size: 14px;
@@ -3020,10 +3021,10 @@ a.restbeef_featured_post_widget_title:hover {
 	color: #555353;
 }
 .widget_categories ul li:hover a {
-	color: #b71c1c;
+	color: #ec7b03;
 }
 .widget_categories ul li:hover {
-	border-color: #b71c1c;
+	border-color: #ec7b03;
 }
 .widget_categories ul li a:after {
 	content: '\f105';
@@ -3054,7 +3055,7 @@ a.restbeef_featured_post_widget_title:hover {
 	transition: background 300ms, color 300ms;
 }
 .widget_tag_cloud .tagcloud a:hover {
-	background: #b71c1c;
+	background: #ec7b03;
 }
 
 /* Widget Instagram */
@@ -3114,7 +3115,7 @@ a.restbeef_featured_post_widget_title:hover {
 
 /* FOOTER WIDGETS */
 .restbeef_footer_widgets {
-	background: #b71c1c;
+	background: #F3782A;
 	position: relative;
 	padding: 60px 0 60px 0;
 }
@@ -3126,7 +3127,7 @@ a.restbeef_featured_post_widget_title:hover {
 	height: 50px;
 	border-radius: 50%;
 	border: 2px solid #ffffff;
-	background: #b71c1c;
+	background: #ec7b03;
 	text-align: center;
 	margin: 0 0 0 -25px;
 	transition: background 300ms;
