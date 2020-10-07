@@ -19,6 +19,7 @@ class AwesomeScripts
 		wp_enqueue_script('analytics', get_template_directory_uri() . '/assets/js/analytics.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('gtm', get_template_directory_uri() . '/assets/js/gtm.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('jquery-min', get_template_directory_uri() . '/assets/js/jquery.min.js', array('jquery'), $awesomeTheme->version, true);
+		wp_enqueue_script('jquery-ui-min', get_template_directory_uri() . '/assets/js/jquery-ui.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('photoswipe', get_template_directory_uri() . '/assets/js/photoswipe.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('photoswipe-default', get_template_directory_uri() . '/assets/js/photoswipe-ui-default.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), $awesomeTheme->version, true);
@@ -36,6 +37,7 @@ class AwesomeScripts
 	{
 		global $awesomeTheme;
         wp_enqueue_style('kube', get_template_directory_uri() . '/assets/css/kube.css', $awesomeTheme->version, true);
+        wp_enqueue_style('jquery-ui-style', get_template_directory_uri() . '/assets/css/jquery-ui.min.css', $awesomeTheme->version, true);
         wp_enqueue_style('font-awesome-style', get_template_directory_uri() . '/assets/css/font-awesome.min.css', $awesomeTheme->version, true);
         wp_enqueue_style('photoswipe', get_template_directory_uri() . '/assets/css/photoswipe.css', $awesomeTheme->version, true);
         wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', $awesomeTheme->version, true);

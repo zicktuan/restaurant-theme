@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+    $('#datepicker').datepicker();
+
     $('.awe-btn-opend-popup-js').click(function() {
         $('.awe-res-popup-reservation').css('display', 'block')
     });
