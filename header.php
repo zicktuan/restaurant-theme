@@ -14,6 +14,7 @@
 
 <!--    <link href="https://fonts.googleapis.com/css?family=Great+Vibes%7COpen+Sans:400,700%7CRoboto%7CRoboto+Condensed:400,700&display=swap" rel="stylesheet">-->
     <link href="https://fonts.googleapis.com/css2?family=Sedgwick+Ave&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" type="image/x-icon" href="<?php echo get_template_directory_uri() . '/assets/images/favicon.png'?>">
 
 <!--    <link href="./Restbeef - Steakhouse HTML Template_files/css" rel="stylesheet">-->
     <?php wp_head() ?>
@@ -57,10 +58,9 @@
 
                     <div class="restbeef_header_socials">
                         <ul class="restbeef_header_socials_list">
-                            <li><a href="https://demo-storage.com/pm/html/restbeef/#"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://demo-storage.com/pm/html/restbeef/#"><i class="fa fa-twitter"></i></a></li>
-                            <li><a href="https://demo-storage.com/pm/html/restbeef/#"><i class="fa fa-instagram"></i></a></li>
-                            <li><a href="https://demo-storage.com/pm/html/restbeef/#"><i class="fa fa-youtube-play"></i></a></li>
+                            <?php echo !empty($optionTheme['awe_social_fb']) ? '<li><a href="'.$optionTheme['awe_social_fb'].'"><i class="fa fa-facebook"></i></a></li>' : '' ?>
+                            <?php echo !empty($optionTheme['awe_social_ins']) ? '<li><a href="'.$optionTheme['awe_social_ins'].'"><i class="fa fa-instagram"></i></a></li>' : '' ?>
+                            <?php echo !empty($optionTheme['awe_social_you']) ? '<li><a href="'.$optionTheme['awe_social_you'].'"><i class="fa fa-youtube-play"></i></a></li>' : '' ?>
                         </ul>
                     </div>
                 </div>

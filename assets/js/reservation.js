@@ -2,6 +2,21 @@ $(document).ready(function() {
 
     $('#datepicker').datepicker();
 
+    $('.awe-time-js').change(function(e) {
+        let getVal = $(e.currentTarget).val();
+
+        if (1 == getVal) {
+            $('#awe-hour-s').css('display', 'none');
+            $('#awe-hour-t').css('display', 'block');
+            $(e.currentTarget).closest('.restbeef_reservation_form').find('.awe-reservation-hour option[value="19:00"]').attr('selected','selected');
+        } else {
+            $('#awe-hour-s').css('display', 'block');
+            $('#awe-hour-t').css('display', 'none');
+            // $('.awe-reservation-hour option[value="11:00"]').prop("selected", true);
+        }
+        console.log($('.awe-reservation-hour').val())
+    });
+
     $('.awe-btn-opend-popup-js').click(function() {
         $('.awe-res-popup-reservation').css('display', 'block')
     });
@@ -11,7 +26,7 @@ $(document).ready(function() {
         $('.awe-res-popup-reservation').css('display', 'none')
     });
 
-    $('.awn-btn-submit-form-reservation').click(function() {
+    $('.awn-btn-submit-form-reservation').click(function(e) {
 
         let reservationDate = $('.awe-reservation-date').val(),
             reservationTime = $('.awe-reservation-time').val(),
@@ -21,7 +36,9 @@ $(document).ready(function() {
             reservationName = $('.awe-reservation-name').val(),
             reservationEmail = $('.awe-reservation-email').val(),
             reservationPhone = $('.awe-reservation-phone').val(),
+            reservationBranch = $('.awe-reservation-cs').val(),
             reservationDesc = $('.awe-reservation-desc').val();
+        // console.log(reservationTime + ' ' + reservationHour)
 
         if( '' ===  reservationDate ) {
             $('.restbeef_input_placeholder').addClass('awe-required');
@@ -61,6 +78,7 @@ $(document).ready(function() {
                     reservationName,
                     reservationEmail,
                     reservationPhone,
+                    reservationBranch,
                     reservationDesc,
                 },
                 success: (data) => {
@@ -71,8 +89,6 @@ $(document).ready(function() {
                 }
             })
         }
-
-
 
     })
 });

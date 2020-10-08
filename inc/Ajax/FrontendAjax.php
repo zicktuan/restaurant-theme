@@ -24,6 +24,7 @@
             $reservationHour = !empty($_POST['reservationHour']) ? $_POST['reservationHour'] : '';
             $reservationAdult = !empty($_POST['reservationAdult']) ? $_POST['reservationAdult'] : 0;
             $reservationChild = !empty($_POST['reservationChild']) ? $_POST['reservationChild'] : 0;
+            $reservationBranch = !empty($_POST['reservationBranch']) ? $_POST['reservationBranch'] : '';
             $reservationDesc = !empty($_POST['reservationDesc']) ? $_POST['reservationDesc'] : '';
 
             $argsData = array(
@@ -33,6 +34,7 @@
                 'hour' => $reservationHour,
                 'adult' => $reservationAdult,
                 'child' => $reservationChild,
+                'branch' => $reservationBranch,
                 'content' => $reservationDesc,
             );
 

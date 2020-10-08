@@ -1,6 +1,9 @@
 
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <?php $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true ); ?>
+    <?php
+    $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true );
+    $dateEvent = get_post_meta(get_the_ID(), 'awe_event_meta', true);
+    ?>
 
     <div class="restbeef_blog_item">
 
@@ -27,7 +30,11 @@
 
         <div class="restbeef_simple_blog_footer">
             <div class="restbeef_simple_blog_meta">
-                <span>25 April, 2019</span>
+                <?php if(!empty($dateEvent)): ?>
+                    <span><?php echo date('MM d, Y', strtotime($dateEvent))?></span>
+                <?php else: ?>
+                    <span><?php echo the_date() ?></span>
+                <?php endif ?>
                 <?php echo (get_comments_number(get_the_ID()) > 0) ? '<span>'.get_comments_number(get_the_ID()).' Comments</span>' : '' ?>
             </div>
             <div class="restbeef_simple_blog_more">
@@ -37,13 +44,13 @@
     </div>
 <?php endwhile; endif; ?>
 
-<nav class="rstbeef_blog_pagination">
-    <div class="nav-links">
-        <span aria-current="page" class="page-numbers current">1</span>
-        <a class="page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#">2</a>
-        <a class="page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#">3</a>
-        <span class="page-numbers dots">…</span>
-        <a class="page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#">8</a>
-        <a class="next page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#"><i class="fa fa-chevron-right"></i></a>
-    </div>
-</nav>
+<!--<nav class="rstbeef_blog_pagination">-->
+<!--    <div class="nav-links">-->
+<!--        <span aria-current="page" class="page-numbers current">1</span>-->
+<!--        <a class="page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#">2</a>-->
+<!--        <a class="page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#">3</a>-->
+<!--        <span class="page-numbers dots">…</span>-->
+<!--        <a class="page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#">8</a>-->
+<!--        <a class="next page-numbers" href="https://demo-storage.com/pm/html/restbeef/blog_sidebar.html#"><i class="fa fa-chevron-right"></i></a>-->
+<!--    </div>-->
+<!--</nav>-->

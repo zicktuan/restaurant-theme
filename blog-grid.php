@@ -1,5 +1,7 @@
 <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
-    <?php $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true );
+    <?php
+    $idVideo = get_post_meta( get_the_ID(), 'awe_id_video', true );
+    $dateEvent = get_post_meta(get_the_ID(), 'awe_event_meta', true);
     ?>
     <div class="restbeef_blog_item">
         <div class="restbeef_grid_blog_item_image">
@@ -14,9 +16,15 @@
                 <h4>
                     <span class="restbeef_up_title"><?php the_title(); ?></span>
                 </h4>
-                <ul class="restbeef_grid_post_meta">
-                    <li>22 May, 2019</li>
-                </ul>
+                <?php if(!empty($dateEvent)): ?>
+                    <ul class="restbeef_grid_post_meta">
+                        <li><?php echo date('MM d, Y', strtotime($dateEvent))?></li>
+                    </ul>
+                <?php else: ?>
+                    <ul class="restbeef_grid_post_meta">
+                        <li><?php echo the_date() ?></li>
+                    </ul>
+                <?php endif ?>
             </div>
             <a href="<?php the_permalink()?>"></a>
         </div>
