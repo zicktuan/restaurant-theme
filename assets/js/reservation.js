@@ -90,5 +90,91 @@ $(document).ready(function() {
             })
         }
 
-    })
+    });
+
+
+    $('.awe-send-mess-js').click(function() {
+        let getName = $('.awe-mess-name-js').val(),
+            getEmail = $('.awe-mess-email-js').val(),
+            getDesc = $('.awe-mess-desc-js').val();
+
+        if( '' ===  getName ) {
+            $('.awe-mess-name-js').addClass('awe-required');
+        } else {
+            $('.awe-mess-name-js').removeClass('awe-required');
+        }
+
+        if( '' ===  getEmail ) {
+            $('.awe-mess-email-js').addClass('awe-required');
+        } else {
+            $('.awe-mess-email-js').removeClass('awe-required');
+        }
+
+        if( '' ===  getDesc ) {
+            $('.awe-mess-desc-js').addClass('awe-required');
+        } else {
+            $('.awe-mess-desc-js').removeClass('awe-required');
+        }
+
+        let data = [];
+        data['name'] = getName;
+        data['email'] = getEmail;
+        data['desc'] = getDesc;
+
+        if ('' !==  getName && '' !==  getEmail && '' !==  getDesc) {
+            loadAjax(data)
+        }
+    });
+
+    $('.awe-contact-send-mess-js').click(function() {
+        let getName = $('.awe-contact-name-mess-js').val(),
+            getEmail = $('.awe-contact-email-mess-js').val(),
+            getDesc = $('.awe-contact-send-desc-js').val();
+
+        if( '' ===  getName ) {
+            $('.awe-contact-name-mess-js').addClass('awe-required');
+        } else {
+            $('.awe-contact-name-mess-js').removeClass('awe-required');
+        }
+
+        if( '' ===  getEmail ) {
+            $('.awe-contact-email-mess-js').addClass('awe-required');
+        } else {
+            $('.awe-contact-email-mess-js').removeClass('awe-required');
+        }
+
+        if( '' ===  getDesc ) {
+            $('.awe-contact-send-desc-js').addClass('awe-required');
+        } else {
+            $('.awe-contact-send-desc-js').removeClass('awe-required');
+        }
+
+        let data = [];
+        data['name'] = getName;
+        data['email'] = getEmail;
+        data['desc'] = getDesc;
+
+        if ('' !==  getName && '' !==  getEmail && '' !==  getDesc) {
+            loadAjax(data)
+        }
+    });
+
+    function loadAjax(argsData) {
+        let name = argsData['name'];
+        let email = argsData['email'];
+        let desc = argsData['desc'];
+        $.ajax({
+            type: 'post',
+            url: awe_admin.url + 'admin-ajax.php',
+            data: {
+                action: 'awe_submit_mess',
+                name,
+                email,
+                desc,
+            },
+            success: (data) => {
+                console.log(1)
+            }
+        })
+    }
 });

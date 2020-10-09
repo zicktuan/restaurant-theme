@@ -6,6 +6,7 @@
         {
             $argsAction = [
                 'awe_reservation'  => array($this, 'aweReservation'),
+                'awe_submit_mess'  => array($this, 'aweSendMess'),
             ];
 
             foreach ($argsAction as $key => $value) {
@@ -67,6 +68,25 @@
                 if (!empty($listMail)) {
                     wp_mail( join(',', $listMail), $subject, $body, $headers );
                 }
+                $status = true;
+            }
+
+            echo wp_json_encode($status);
+            wp_die();
+        }
+
+        public function aweSendMess() {
+            $status = false;
+
+            $data = array(
+                'comment_author' => $_POST['name'],
+                'comment_author_email' => $_POST['email'],
+                'comment_content' => $_POST['desc'],
+            );
+
+            $id = wp_insert_comment($data);
+
+            if (0 !== $id) {
                 $status = true;
             }
 
