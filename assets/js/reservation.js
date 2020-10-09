@@ -8,17 +8,18 @@ $(document).ready(function() {
         if (1 == getVal) {
             $('#awe-hour-s').css('display', 'none');
             $('#awe-hour-t').css('display', 'block');
-            $(e.currentTarget).closest('.restbeef_reservation_form').find('.awe-reservation-hour option[value="19:00"]').attr('selected','selected');
         } else {
             $('#awe-hour-s').css('display', 'block');
             $('#awe-hour-t').css('display', 'none');
-            // $('.awe-reservation-hour option[value="11:00"]').prop("selected", true);
         }
-        console.log($('.awe-reservation-hour').val())
     });
 
     $('.awe-btn-opend-popup-js').click(function() {
         $('.awe-res-popup-reservation').css('display', 'block')
+    });
+
+    $('.awe-close-popup-reservation-tk').click(function() {
+        $('.awe-res-popup-reservation-thanks').css('display', 'none')
     });
 
 
@@ -26,11 +27,17 @@ $(document).ready(function() {
         $('.awe-res-popup-reservation').css('display', 'none')
     });
 
+    $('.awe-close-popup-tk').click(function() {
+        $('.awe-res-popup-thanks').css('display', 'none');
+        location.reload();
+    });
+
     $('.awn-btn-submit-form-reservation').click(function(e) {
 
         let reservationDate = $('.awe-reservation-date').val(),
             reservationTime = $('.awe-reservation-time').val(),
-            reservationHour = $('.awe-reservation-hour').val(),
+            reservationHours = $('.awe-reservation-hour-s').val(),
+            reservationHourt = $('.awe-reservation-hour-t').val(),
             reservationAdult = $('.awe-reservation-adult').val(),
             reservationChild = $('.awe-reservation-child').val(),
             reservationName = $('.awe-reservation-name').val(),
@@ -38,7 +45,6 @@ $(document).ready(function() {
             reservationPhone = $('.awe-reservation-phone').val(),
             reservationBranch = $('.awe-reservation-cs').val(),
             reservationDesc = $('.awe-reservation-desc').val();
-        // console.log(reservationTime + ' ' + reservationHour)
 
         if( '' ===  reservationDate ) {
             $('.restbeef_input_placeholder').addClass('awe-required');
@@ -72,7 +78,8 @@ $(document).ready(function() {
                     action: 'awe_reservation',
                     reservationDate,
                     reservationTime,
-                    reservationHour,
+                    reservationHours,
+                    reservationHourt,
                     reservationAdult,
                     reservationChild,
                     reservationName,
@@ -84,7 +91,8 @@ $(document).ready(function() {
                 success: (data) => {
                     let dataResult = JSON.parse(data);
                     if (true === dataResult) {
-                        $('.awe-res-popup-reservation').css('display', 'none')
+                        $('.awe-res-popup-reservation').css('display', 'none');
+                        $('.awe-res-popup-reservation-thanks').css('display', 'block')
                     }
                 }
             })
@@ -173,7 +181,10 @@ $(document).ready(function() {
                 desc,
             },
             success: (data) => {
-                console.log(1)
+                let dataResult = JSON.parse(data);
+                if (true === dataResult) {
+                    $('.awe-res-popup-thanks').css('display', 'block')
+                }
             }
         })
     }

@@ -49,6 +49,20 @@
 </div>
 <?php endif ?>
 
+<div class="awe-res-popup-thanks">
+    <div class="awe-res-popup-thanks-content">
+        <p class="awe-mess-tks-popup"><strong>Cám ơn bạn đã góp ý cho chúng tôi!</strong></p>
+        <a href="#" class="close awe-close-popup-tk"></a>
+    </div>
+</div>
+
+<div class="awe-res-popup-reservation-thanks">
+    <div class="awe-res-popup-reservation-thanks-content">
+        <p class="awe-mess-tks-popup"><strong>Đặt bàn thành công! Chúng tôi sẽ liên hệ lại với bạn sớm nhất.</strong></p>
+        <a href="#" class="close awe-close-popup-reservation-tk"></a>
+    </div>
+</div>
+
 </div>
 
 <?php wp_footer() ?>

@@ -22,11 +22,19 @@
             $reservationEmail = $_POST['reservationEmail'];
             $reservationPhone = $_POST['reservationPhone'];
             $reservationTime = !empty($_POST['reservationTime']) ? $_POST['reservationTime'] : 0;
-            $reservationHour = !empty($_POST['reservationHour']) ? $_POST['reservationHour'] : '';
+            $reservationHours = !empty($_POST['reservationHours']) ? $_POST['reservationHours'] : '';
+            $reservationHourt = !empty($_POST['reservationHourt']) ? $_POST['reservationHourt'] : '';
             $reservationAdult = !empty($_POST['reservationAdult']) ? $_POST['reservationAdult'] : 0;
             $reservationChild = !empty($_POST['reservationChild']) ? $_POST['reservationChild'] : 0;
             $reservationBranch = !empty($_POST['reservationBranch']) ? $_POST['reservationBranch'] : '';
             $reservationDesc = !empty($_POST['reservationDesc']) ? $_POST['reservationDesc'] : '';
+
+            $reservationHour = '';
+            if (1 == $reservationTime) {
+                $reservationHour = $reservationHourt;
+            } else {
+                $reservationHour = $reservationHours;
+            }
 
             $argsData = array(
                 'name' => $reservationName,

@@ -9,7 +9,7 @@
             <div class="row">
                 <div class="col-3"></div>
                 <div class="col-6 align_center awe-desc-wrap-css">
-                    <p>If you plan your leisure in advance and do not want to get into a situation when the planned dinner is canceled due to the lack of free seats, reserve a table in advance. You can reserve a table by filling out the form below.</p>
+                    <?php echo !empty($optionTheme['awe_reservation_st_desc']) ? $optionTheme['awe_reservation_st_desc'] : ''?>
                 </div>
                 <div class="col-3"></div>
             </div>
@@ -32,14 +32,14 @@
                                     </select>
                                 </div>
                                 <div class="col-6 awe-hour-ge" id="awe-hour-s">
-                                    <select class="awe-reservation-hour" name="awe-reservation-hour">
+                                    <select class="awe-reservation-hour-s" name="awe-reservation-hour">
                                         <?php foreach ($optionTheme['awe_reservation_st_hour_s'] as $hour):?>
                                             <option value="<?php echo $hour['title'] ?>"><?php echo $hour['title'] ?></option>
                                         <?php endforeach; ?>
                                     </select>
                                 </div>
                                 <div class="col-6 awe-hour-ge" id="awe-hour-t" style="display:none;">
-                                    <select class="awe-reservation-hour" name="awe-reservation-hour">
+                                    <select class="awe-reservation-hour-t" name="awe-reservation-hour">
                                         <?php foreach ($optionTheme['awe_reservation_st_hour_t'] as $hour):?>
                                             <option value="<?php echo $hour['title'] ?>"><?php echo $hour['title'] ?></option>
                                         <?php endforeach; ?>
@@ -74,9 +74,9 @@
                         <div class="col-6">
                             <select class="awe-reservation-cs" name="awe-reservation-cs">
                                 <option value=" " hidden="hidden">Chọn cơ sở</option>
-                                <option value="branch-1">Deli4b Nguyễn Văn Lộc</option>
-                                <option value="branch-2">Deli4b Võ Thị Sáu</option>
-                                <option value="branch-3">Deli4b Thượng Đình</option>
+                                <?php foreach($optionTheme['awe_reservation_st_branch'] as $branch): ?>
+                                    <option value="<?php echo $branch['title'] ?>"><?php echo $branch['title'] ?></option>
+                                <?php endforeach; ?>
                             </select>
                         </div>
                     </div>
