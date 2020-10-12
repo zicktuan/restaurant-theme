@@ -27,7 +27,7 @@
     <?php endif;
         $comments_args = array(
             // Change the title of send button
-            'label_submit' => __('Send Your Message', 'bookawesome'),
+            'label_submit' => __('Gửi tin nhắn của bạn', 'bookawesome'),
             'class_submit' => __('submit', 'bookawesome'),
             'logged_in_as' => '',
             'class_form'           => 'comment-form',
@@ -42,13 +42,13 @@
             'comment_field' =>
             '<div class="row">
                 <div class="col-6">
-                    <input type="text" placeholder="Enter Your Name">
+                    <input type="text" placeholder="Tên khách hàng">
                 </div>
                 <div class="col-6">
-                    <input type="email" placeholder="Enter Your Email">
+                    <input type="email" placeholder="Email">
                 </div>
             </div>
-            <textarea name="comment" cols="45" rows="5" placeholder="Comment" id="comment-message" class="form-field"></textarea>',
+            <textarea name="comment" cols="45" rows="5" placeholder="Ý kiến khách hàng" id="comment-message" class="form-field"></textarea>',
             );
         ?>
         <?php comment_form($comments_args);?>

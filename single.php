@@ -7,7 +7,7 @@ $showBlog = !empty($optionTheme['awe_config_show_blog']) ? $optionTheme['awe_con
     <div class="restbeef_main_wrapper">
         <div class="restbeef_container">
             <div class="restbeef_content_wrapper <?php echo (1 == $showBlog) ? 'restbeef_right_sidebar' : 'restbeef_no_sidebar' ?> ">
-                <!-- Content Inner -->
+
                 <div class="restbeef_content">
                     <div class="restbeef_tiny">
 
@@ -92,8 +92,8 @@ $showBlog = !empty($optionTheme['awe_config_show_blog']) ? $optionTheme['awe_con
                         <div class="restbeef_comments_cont">
                             <div class="restbeef_comments_wrapper">
                                 <h2 class="align_center">
-                                    <span class="restbeef_up_title">People Say</span>
-                                    Post Comments
+                                    <span class="restbeef_up_title">Ý kiến khách hàng</span>
+                                    Đăng ý kiến
                                 </h2>
 
                                 <?php if (comments_open() && !post_password_required()) {comments_template('', true);}?>
@@ -103,8 +103,8 @@ $showBlog = !empty($optionTheme['awe_config_show_blog']) ? $optionTheme['awe_con
 
                         <div class="restbeef_block restbeef_single_recents">
                             <h2 class="align_center restbeef_js_padding" data-padding="0 0 10px 0" style="padding: 0px 0px 10px;">
-                                <span class="restbeef_up_title">You May Like</span>
-                                Recent Posts
+                                <span class="restbeef_up_title">Bạn có thể thích</span>
+                                Bài đăng gần đây
                             </h2>
                             <div class="restbeef_block_inner">
                                 <div class="restbeef_recent_posts <?php echo (1 == $showBlog) ? 'restbeef_grig_2columns' : 'restbeef_grig_3columns' ?>">
