@@ -18,10 +18,6 @@ $(document).ready(function() {
         $('.awe-res-popup-reservation').css('display', 'block')
     });
 
-    $('.awe-close-popup-reservation-tk').click(function() {
-        $('.awe-res-popup-reservation-thanks').css('display', 'none')
-    });
-
 
     $('.awe-close-popup').click(function() {
         $('.awe-res-popup-reservation').css('display', 'none')
@@ -92,7 +88,12 @@ $(document).ready(function() {
                     let dataResult = JSON.parse(data);
                     if (true === dataResult) {
                         $('.awe-res-popup-reservation').css('display', 'none');
-                        $('.awe-res-popup-reservation-thanks').css('display', 'block')
+                        Swal.fire({
+                            title: 'Đặt bàn thành công!',
+                            text: 'Cám ơn bạn đã sử dụng dịch vụ đặt bàn online! Chúng tôi sẽ liên hệ lại sớm nhât!',
+                            icon: 'success',
+                            confirmButtonText: 'Ok'
+                        });
                     }
                 }
             })
@@ -183,7 +184,18 @@ $(document).ready(function() {
             success: (data) => {
                 let dataResult = JSON.parse(data);
                 if (true === dataResult) {
-                    $('.awe-res-popup-thanks').css('display', 'block')
+                    Swal.fire({
+                        title: 'Cám ơn bạn đã góp ý cho chúng tôi!',
+                        showClass: {
+                            popup: 'animate__animated animate__fadeInDown'
+                        },
+                        hideClass: {
+                            popup: 'animate__animated animate__fadeOutUp'
+                        },
+                        showConfirmButton: false,
+                        timer: 3000
+                    });
+                    setTimeout(function() {window.location.reload(true)}, 3000);
                 }
             }
         })

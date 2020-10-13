@@ -23,8 +23,9 @@ class AwesomeScripts
 		wp_enqueue_script('photoswipe', get_template_directory_uri() . '/assets/js/photoswipe.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('photoswipe-default', get_template_directory_uri() . '/assets/js/photoswipe-ui-default.min.js', array('jquery'), $awesomeTheme->version, true);
 		wp_enqueue_script('owl-carousel', get_template_directory_uri() . '/assets/js/owl.carousel.min.js', array('jquery'), $awesomeTheme->version, true);
-		wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), $awesomeTheme->version, true);
-		wp_enqueue_script('reservation', get_template_directory_uri() . '/assets/js/reservation.js', array('jquery'), $awesomeTheme->version, true);
+        wp_enqueue_script('sweetalert2', get_template_directory_uri() . '/assets/lib/sweetalert2/sweetalert2.js', array('jquery'), $awesomeTheme->version, true);
+        wp_enqueue_script('theme', get_template_directory_uri() . '/assets/js/theme.js', array('jquery'), $awesomeTheme->version, true);
+        wp_enqueue_script('reservation', get_template_directory_uri() . '/assets/js/reservation.js', array('jquery'), $awesomeTheme->version, true);
 
         wp_localize_script('photoswipe', 'awe_admin',
             array(
@@ -41,6 +42,7 @@ class AwesomeScripts
         wp_enqueue_style('font-awesome-style', get_template_directory_uri() . '/assets/css/font-awesome.min.css', $awesomeTheme->version, true);
         wp_enqueue_style('photoswipe', get_template_directory_uri() . '/assets/css/photoswipe.css', $awesomeTheme->version, true);
         wp_enqueue_style('owl-carousel', get_template_directory_uri() . '/assets/css/owl.carousel.css', $awesomeTheme->version, true);
+        wp_enqueue_style('sweetalert2', get_template_directory_uri() . '/assets/lib/sweetalert2/sweetalert2.css', $awesomeTheme->version, true);
 		wp_enqueue_style('theme', get_template_directory_uri() . '/assets/css/theme.css', $awesomeTheme->version, true);
 		wp_enqueue_style('responsive', get_template_directory_uri() . '/assets/css/responsive.css', $awesomeTheme->version, true);
 	}
